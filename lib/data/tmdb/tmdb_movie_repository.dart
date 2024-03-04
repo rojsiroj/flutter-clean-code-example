@@ -18,15 +18,30 @@ class TmdbMovieRepository implements MovieRepository {
   TmdbMovieRepository({Dio? dio}) : _dio = dio ?? Dio();
 
   @override
-  Future<Result<List<Actor>>> getActors({required int id}) {
-    // TODO: implement getActors
-    throw UnimplementedError();
+  Future<Result<List<Actor>>> getActors({required int id}) async {
+    try {
+      final response = await _dio!.get(
+          'https://api.themoviedb.org/3/movie/$id/credits?language=en-US',
+          options: _options);
+
+      final results = List<Map<String, dynamic>>.from(response.data['cast']);
+      return Result.success(results.map((e) => Actor.fromJSON(e)).toList());
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 
   @override
-  Future<Result<MovieDetail>> getDetail({required int id}) {
-    // TODO: implement getDetail
-    throw UnimplementedError();
+  Future<Result<MovieDetail>> getDetail({required int id}) async {
+    try {
+      final response = await _dio!.get(
+          'https://api.themoviedb.org/3/movie/$id?language=en-US',
+          options: _options);
+
+      return Result.success(MovieDetail.fromJSON(response.data));
+    } on DioException catch (e) {
+      return Result.failed('${e.message}');
+    }
   }
 
   @override
