@@ -1,4 +1,4 @@
-import 'package:flix_id/presentation/widgets/bottom_vav_bar_item.dart';
+import 'package:flix_id/presentation/widgets/bottom_nav_bar_item.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {
