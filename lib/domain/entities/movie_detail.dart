@@ -20,7 +20,7 @@ class MovieDetail with _$MovieDetail {
       title: json["title"],
       overview: json["overview"],
       runtime: json["runtime"],
-      voteAverage: json["voteAverage"].toDouble(),
+      voteAverage: (json["vote_average"] ?? 0).toDouble(),
       genres: List<String>.from(json["genres"].map((e) => e['name'])),
       posterPath: json["poster_path"],
       backdropPath: json["backdrop_path"]);

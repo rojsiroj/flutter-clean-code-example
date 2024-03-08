@@ -1,6 +1,5 @@
 import 'package:flix_id/presentation/misc/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class FlixTextField extends StatelessWidget {
   final String labelText;
