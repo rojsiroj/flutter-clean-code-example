@@ -16,8 +16,10 @@ class Upcoming extends _$Upcoming {
     state = const AsyncLoading();
 
     GetMovieList getMovieList = ref.read(getMovieListProvider);
-    var result = await getMovieList(
-        GetMovieListParams(category: MovieListCategories.upcoming, page: page));
+    var result = await getMovieList(GetMovieListParams(
+      category: MovieListCategories.upcoming,
+      page: page,
+    ));
 
     switch (result) {
       case Success(value: final movies):

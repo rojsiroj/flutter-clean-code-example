@@ -25,7 +25,7 @@ class NetworkImageCard extends StatelessWidget {
         child: Container(
           width: width,
           height: height,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.black54,
           ),
           child: Stack(
