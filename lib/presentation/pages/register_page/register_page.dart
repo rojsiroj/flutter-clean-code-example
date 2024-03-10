@@ -21,6 +21,16 @@ class _RegisterPageState extends ConsumerState<RegisterPage> {
   final TextEditingController emailController = TextEditingController();
 
   @override
+  void dispose() {
+    nameController.dispose();
+    passwordController.dispose();
+    retypePasswordController.dispose();
+    emailController.dispose();
+
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     ref.listen(userDataProvider, (previous, next) {
       if (next is AsyncData && next.value != null) {
