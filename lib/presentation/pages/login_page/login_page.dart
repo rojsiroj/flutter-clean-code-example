@@ -16,6 +16,8 @@ class LoginPage extends ConsumerStatefulWidget {
 class _LoginPageState extends ConsumerState<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  // TODO: PASSWORD SHOW HIDE
+  // TODO: MULTI LANGUAGE
 
   @override
   void dispose() {

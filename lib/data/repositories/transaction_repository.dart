@@ -1,6 +1,6 @@
 import 'package:flix_id/domain/entities/transaction.dart';
 
-import '../../domain/entities/result.dart';
+import 'package:flix_id/domain/entities/result.dart';
 
 abstract interface class TransactionRepository {
   Future<Result<Transaction>> createTransaction(
