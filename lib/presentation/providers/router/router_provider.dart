@@ -8,6 +8,7 @@ import 'package:flix_id/presentation/pages/main_page/main_page.dart';
 import 'package:flix_id/presentation/pages/register_page/register_page.dart';
 import 'package:flix_id/presentation/pages/seat_booking_page/seat_booking_page.dart';
 import 'package:flix_id/presentation/pages/time_booking_page/time_booking_page.dart';
+import 'package:flix_id/presentation/pages/wallet_page/wallet_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -57,5 +58,10 @@ Raw<GoRouter> router(RouterRef ref) => GoRouter(routes: [
         builder: (context, state) => BookingConfirmationPage(
           transactionDetail: state.extra as (MovieDetail, Transaction),
         ),
+      ),
+      GoRoute(
+        path: '/wallet',
+        name: 'wallet',
+        builder: (context, state) => const WalletPage(),
       ),
     ], initialLocation: '/login', debugLogDiagnostics: false);
