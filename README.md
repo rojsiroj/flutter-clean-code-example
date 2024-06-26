@@ -1,3 +1,3 @@
-# flix_id
+# Flutter Clean Code Example
 
-A new Flutter project.
+A Flutter project to learn about clean code architecture
